@@ -12,11 +12,9 @@
     --slot-bg: #1c1c1c;
     --slot-border: #2c2c2c;
   }
-
   * {
     box-sizing: border-box;
   }
-
   body {
     margin: 0;
     background: var(--bg);
@@ -24,18 +22,15 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     padding: 60px 24px 100px;
   }
-
   .wrap {
     max-width: 1100px;
     margin: 0 auto;
   }
-
   h1 {
     font-size: 2.4rem;
     margin: 0 0 12px;
     letter-spacing: -0.01em;
   }
-
   p.description {
     color: var(--muted);
     font-size: 1.05rem;
@@ -43,13 +38,11 @@
     line-height: 1.5;
     margin: 0 0 48px;
   }
-
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
-
   .slot {
     aspect-ratio: 1 / 1;
     background: var(--slot-bg);
@@ -58,14 +51,12 @@
     overflow: hidden;
     cursor: pointer;
   }
-
   .slot img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-
   .overlay {
     position: fixed;
     inset: 0;
@@ -76,21 +67,17 @@
     padding: 40px;
     cursor: pointer;
   }
-
   .overlay.open {
     display: flex;
   }
-
   .overlay img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 6px;
   }
-
   @media (max-width: 900px) {
     .grid { grid-template-columns: repeat(3, 1fr); }
   }
-
   @media (max-width: 600px) {
     .grid { grid-template-columns: repeat(2, 1fr); }
     h1 { font-size: 1.9rem; }
@@ -101,7 +88,6 @@
   <div class="wrap">
     <h1>goldtro exposure (reuploaded)</h1>
     <p class="description">oh noooo goldtro exposed...... ok look at images below. site is open source at https://github.com/lacksonz/GoldTroExposure/main/index.html</p>
-
     <div class="grid">
      <div class="slot"><img src="images/Screenshot_20260619_194033_Chrome.jpg"></div>
       <div class="slot"><img src="images/IMG_8398.png"></div>
@@ -125,15 +111,12 @@
       <div class="slot"><img src=""></div>
     </div>
   </div>
-
   <div class="overlay" id="overlay">
     <img id="overlayImg" src="">
   </div>
-
   <script>
     const overlay = document.getElementById("overlay");
     const overlayImg = document.getElementById("overlayImg");
-
     document.querySelectorAll(".slot img").forEach(img => {
       img.addEventListener("click", () => {
         if (!img.src) return;
@@ -141,7 +124,6 @@
         overlay.classList.add("open");
       });
     });
-
     overlay.addEventListener("click", () => {
       overlay.classList.remove("open");
     });
